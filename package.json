@@ -32,7 +32,8 @@
     "debug": "^4.3.3",
     "dotenv": "^14.2.0",
     "loglevel": "^1.8.0",
-    "loglevel-plugin-prefix": "^0.8.4"
+    "loglevel-plugin-prefix": "^0.8.4",
+    "pluralize": "^8.0.0"
   },
   "scripts": {},
   "repository": {
