@@ -7,8 +7,10 @@
   "exports": {
     ".": "./lib/main.js",
     "./authentication": "./lib/authentication/index.js",
+    "./customer": "./lib/customer/index.js",
     "./category": "./lib/category/index.js",
-    "./*": "./*.js"
+    "./*": "./*.js",
+    "./internal/*": null
   },
   "directories": {
     "lib": "lib",
