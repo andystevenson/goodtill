@@ -29,7 +29,9 @@
     "./promotion": "./lib/promotion/index.js",
     "./loyalty": "./lib/loyalty/index.js",
     "./report": "./lib/report/index.js",
-    "./*": "./*.js",
+    "./outlet": "./lib/outlet/index.js",
+    "./user": "./lib/user/index.js",
+    "./*": "./*/*.js",
     "./internal/*": null
   },
   "directories": {

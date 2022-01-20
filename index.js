@@ -1,3 +1,4 @@
+import request from './lib/utilities/request.js'
 import goodtill from '@andystevenson/goodtill'
 import {
   login,
@@ -29,6 +30,8 @@ import voucher from '@andystevenson/goodtill/voucher'
 import promotion from '@andystevenson/goodtill/promotion'
 import loyalty from '@andystevenson/goodtill/loyalty'
 import report from '@andystevenson/goodtill/report'
+import outlet from '@andystevenson/goodtill/outlet'
+import user from '@andystevenson/goodtill/user'
 
 await login()
 // const id = credentials()
@@ -261,10 +264,49 @@ await login()
 // }
 
 // {
-// // TODO: doesn't currently work
+// // TODO: doesn't currently work, needs more investigation
 //   const r = report.all()
 //   console.log({ r })
 // }
+
+// {
+//   const o = await outlet.all()
+//   console.log({ o })
+// }
+// {
+//   const o = await outlet.read('WWSC')
+//   console.log({ o })
+// }
+// {
+//   const o = await outlet.read('86de85bf-1329-45c7-aec5-c6b3109fd47c')
+//   console.log({ o })
+// }
+
+/////////////////
+
+// {
+//   const u = await user.all()
+//   console.log({ u })
+// }
+// {
+//   const u = await user.read('Catherine Aucott')
+//   console.log({ u })
+// }
+// {
+//   const u = await user.all('b593cefc-99c5-406f-b553-ee456dbc7056')
+//   console.log({ u })
+// }
+
+// // goodeats outlets
+// {
+//   const r = await request({
+//     baseURL: 'https://weborderapi.thegoodtill.com/api',
+//     url: '/outlets',
+//     data: { postcode: 'B91 1DA' },
+//   })
+//   console.log('%o', { r })
+// }
+
 ////////////////
 {
   // TODO: invalidate
