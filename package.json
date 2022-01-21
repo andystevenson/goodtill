@@ -7,7 +7,9 @@
   "exports": {
     ".": "./lib/main.js",
     "./authentication": "./lib/authentication/index.js",
+    "./authentication/*": "./lib/authentication/*.js",
     "./customer": "./lib/customer/index.js",
+    "./customer/*": "./lib/customer/*.js",
     "./customerGroup": "./lib/customerGroup/index.js",
     "./category": "./lib/category/index.js",
     "./product": "./lib/product/index.js",
@@ -31,7 +33,7 @@
     "./report": "./lib/report/index.js",
     "./outlet": "./lib/outlet/index.js",
     "./user": "./lib/user/index.js",
-    "./*": "./*/*.js",
+    "./*": "./*",
     "./internal/*": null
   },
   "directories": {
@@ -48,7 +50,14 @@
     "loglevel-plugin-prefix": "^0.8.4",
     "pluralize": "^8.0.0"
   },
-  "scripts": {},
+  "ava": {
+    "files": [
+      "test/**/*.test.js"
+    ]
+  },
+  "scripts": {
+    "test": "ava --watch"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andystevenson/goodtill.git"
@@ -66,5 +75,10 @@
   "bugs": {
     "url": "https://github.com/andystevenson/goodtill/issues"
   },
-  "homepage": "https://github.com/andystevenson/goodtill#readme"
+  "homepage": "https://github.com/andystevenson/goodtill#readme",
+  "devDependencies": {
+    "ava": "^4.0.1",
+    "eslint": "^8.7.0",
+    "eslint-plugin-ava": "^13.2.0"
+  }
 }

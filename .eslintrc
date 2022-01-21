@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node": true
+  },
+  "plugins": ["ava"],
+  "extends": ["eslint:recommended", "plugin:ava/recommended"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": ["warn", "never"],
+    "no-unused-vars": "warn",
+    "ava/assertion-arguments": 0
+  }
+}
