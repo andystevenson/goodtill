@@ -6,8 +6,16 @@ import logout from '@andystevenson/goodtill/authentication/logout'
 
 const run = async (obj, ...args) => {
   const [name, fn] = Object.entries(obj)[0]
-  log.info(`Running ${name}...`)
-  const r = await fn()
+  try {
+    log.info(`Running ${name}...`)
+    await login()
+    const r = await fn(...args)
+    // log.info({ r })
+    await logout()
+    log.info(`Ran ${name} ${Date.now()}`)
+  } catch (error) {
+    log.error(`Failed ${name} [${error.message}]`)
+  }
   log.info(`Ran ${name} ${Date.now()}`)
 }
 
@@ -28,8 +36,10 @@ const functions = (obj) =>
   }, [])
 
 const all = functions(goodtill)
-all.map(async (fn) => {
-  await login()
-  await run(fn)
-  await logout()
-})
+
+const process = async (previous, next) => {
+  await previous
+  return run(next)
+}
+
+all.reduce(process, Promise.resolve())
