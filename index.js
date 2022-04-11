@@ -7,6 +7,10 @@ import logout from '@andystevenson/goodtill/authentication/logout'
 const run = async (obj, ...args) => {
   const [name, fn] = Object.entries(obj)[0]
   try {
+    if (name === 'every') {
+      log.info(`Skipping ${name}...`)
+      return
+    }
     log.info(`Running ${name}...`)
     await login()
     const r = await fn(...args)
