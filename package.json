@@ -1,6 +1,6 @@
 {
   "name": "@andystevenson/goodtill",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "providing access to the goodtill backoffice api",
   "main": "lib/main.js",
   "type": "module",
