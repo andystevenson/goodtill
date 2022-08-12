@@ -5,16 +5,16 @@ import { read } from '@andystevenson/goodtill/product'
 import util from 'node:util'
 const categories = await categorize()
 
-const beer = Object.values(categories)
-  .find((category) => category.name === 'BEER')
-  .children.map((beer) => ({
-    name: beer.product_name,
-    display: beer.display_name,
-    variants: beer.has_variant,
-    count: beer.current_variants.length,
-    parent: beer.parent_product_id,
+const lunch = Object.values(categories)
+  .find((category) => category.name === 'SUNDAY LUNCH')
+  .children.map((lunch) => ({
+    name: lunch.product_name,
+    display: lunch.display_name,
+    variants: lunch.has_variant,
+    count: lunch.current_variants.length,
+    parent: lunch.parent_product_id,
   }))
-const output = util.inspect(beer, false, null, true)
+const output = util.inspect(lunch, false, null, true)
 console.log(output)
 // await login()
 // const main = await read('2b55e287-0d63-45ef-8390-9214e26c3947')
