@@ -1,7 +1,10 @@
 {
   "name": "@andystevenson/goodtill",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "providing access to the goodtill backoffice api",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "lib/main.js",
   "type": "module",
   "exports": {
