@@ -1,5 +1,5 @@
 const x = async () => {
-  const module = await import('@andystevenson/goodtill/authentication')
+  const module = await import('@andystevenson/goodtill')
   console.log({ module })
 }
 
