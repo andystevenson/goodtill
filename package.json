@@ -1,6 +1,6 @@
 {
   "name": "@andystevenson/goodtill",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "providing access to the goodtill backoffice api",
   "publishConfig": {
     "access": "public"

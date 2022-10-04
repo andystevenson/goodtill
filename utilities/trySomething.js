@@ -1,22 +1,14 @@
-import { login, logout } from '@andystevenson/goodtill/authentication'
-import { categorize } from '@andystevenson/goodtill/category'
-import { read } from '@andystevenson/goodtill/product'
+import { login, logout, goodtill } from '@andystevenson/goodtill'
 
-import util from 'node:util'
-const categories = await categorize()
+async function bar() {
+  const daterange = '01/10/2022 00:00 AM - 04/10/2022 00:00 AM'
+  const url = 'https://api.thegoodtill.com/api/report/sales/summary'
 
-const lunch = Object.values(categories)
-  .find((category) => category.name === 'SUNDAY LUNCH')
-  .children.map((lunch) => ({
-    name: lunch.product_name,
-    display: lunch.display_name,
-    variants: lunch.has_variant,
-    count: lunch.current_variants.length,
-    parent: lunch.parent_product_id,
-  }))
-const output = util.inspect(lunch, false, null, true)
-console.log(output)
-// await login()
-// const main = await read('2b55e287-0d63-45ef-8390-9214e26c3947')
-// console.log({ main })
-// await logout()
+  await login()
+  const report = await goodtill.post(url, { daterange })
+  await logout()
+
+  console.log(report.data.data)
+}
+
+bar()
